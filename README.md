@@ -179,14 +179,7 @@ Aunque el JavaScript no es mi especialidad, aprendí a investigar, buscar recurs
 
 ---
 
-## 🔗 Próximos Pasos
-
-- [ ] Implementar filtros por estado (completado/pendiente)
-- [ ] Agregar fechas de creación y modificación
-- [ ] Sistema de categorías o etiquetas
-- [ ] Notificaciones de tareas próximas a vencer
-- [ ] Deploy en producción (Railway, Vercel, etc.)
 
 ---
 
-**Desarrollado con 💚 y mucho aprendizaje**
+**Desarrollado con mucho Mate y ganas y mucho aprendizaje**
