@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.task_api.api_task_mini.ApiTaskMiniApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 18.49 s -- in com.task_api.api_task_mini.ApiTaskMiniApplicationTests

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Edicion de Misión - Control de Tareas</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec5b",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102216",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #111813;
+        }
+    </style>
+</head>
+
+<body class="font-display bg-background-light dark:bg-background-dark">
+    <div class="relative flex min-h-screen w-full flex-col items-center justify-center p-4">
+        <div class="w-full max-w-2xl space-y-8">
+            <!-- Page Heading -->
+            <div class="flex flex-col items-center gap-3 text-center">
+                <h1 class="text-4xl font-black leading-tight tracking-[-0.033em] text-white md:text-5xl">EDITAR MISIÓN
+                </h1>
+                <p class="text-base font-normal leading-normal text-[#9db9a6]">Edita tu tarea para añadir a tu
+                    lista.</p>
+            </div>
+            <!-- Form Container -->
+            <form action="">
+                <input type="hidden" id="taskId" value="" />
+                <div class="flex w-full flex-col gap-6 rounded-xl border border-[#3b5443] bg-[#111813]/50 p-6 md:p-8">
+                    <!-- Mission Title -->
+                    <label class="flex flex-col">
+                        <p class="pb-2 text-base font-medium leading-normal text-white">Título de la Misión:</p>
+                        <input id="titulo"
+                            class="form-input flex h-14 w-full min-w-0 flex-1 resize-none overflow-hidden rounded border border-[#3b5443] bg-[#1c271f] p-[15px] text-base font-normal leading-normal text-white placeholder:text-[#9db9a6] focus:border-primary focus:outline-0 focus:ring-0"
+                            placeholder="Introduce el título de la tarea" value="" />
+                    </label>
+                    <!-- Details / Objectives -->
+                    <label class="flex flex-col">
+                        <p class="pb-2 text-base font-medium leading-normal text-white">Detalles / Objetivos:</p>
+                        <textarea id="descripcion"
+                            class="form-input flex min-h-36 w-full min-w-0 flex-1 resize-y overflow-hidden rounded border border-[#3b5443] bg-[#1c271f] p-[15px] text-base font-normal leading-normal text-white placeholder:text-[#9db9a6] focus:border-primary focus:outline-0 focus:ring-0"
+                            placeholder="Describe los detalles de tu misión aquí..."></textarea>
+                    </label>
+                    <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+                        <!-- Due Date -->
+                        <label class="flex flex-col">
+                            <p class="pb-2 text-base font-medium leading-normal text-white">Fecha Límite:</p>
+                            <div class="relative">
+                                <input id="fechaLimite"
+                                    class="form-input h-14 w-full rounded border border-[#3b5443] bg-[#1c271f] p-[15px] text-white placeholder:text-[#9db9a6] focus:border-primary focus:outline-0 focus:ring-0"
+                                    style="color-scheme: dark;" type="date" />
+                            </div>
+                        </label>
+
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="mt-4 flex flex-col items-center gap-4 sm:flex-row">
+                        <button id="btn-guardar"
+                            class="flex h-14 w-full items-center justify-center gap-2 rounded-lg bg-primary px-6 text-base font-bold text-black transition-colors hover:bg-primary/90">
+                            <span class="material-symbols-outlined">save</span>
+                            ¡GUARDAR TAREA!
+                        </button>
+                        <a href="listar_task.html"
+                            class="flex h-14 w-full items-center justify-center rounded-lg bg-transparent px-6 text-base font-medium text-[#9db9a6] transition-colors hover:bg-white/10 sm:w-auto">
+                            Cancelar
+                            
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/task.js"></script>
+</body>
+
+</html>

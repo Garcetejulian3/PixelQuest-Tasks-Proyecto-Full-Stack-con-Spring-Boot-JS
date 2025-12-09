@@ -1,0 +1,46 @@
+✅ 1. FRONTEND — capturar la ID al tocar “Editar”
+
+Como ahora cada tarea trae la ID, cuando pintes las tareas en HTML hacé algo así:
+
+<div class="tarea">
+  <h3>${titulo}</h3>
+  <p>${descripcion}</p>
+  <button class="editar-btn" data-id="${id}">Editar</button>
+</div>
+
+
+Al renderizarlo con JS:
+
+listaTareas.forEach(t => {
+  contenedor.innerHTML += `
+    <div class="tarea">
+      <h3>${t.titulo}</h3>
+      <p>${t.descripcion}</p>
+      <button class="editar-btn" data-id="${t.id}">Editar</button>
+    </div>
+  `;
+});
+
+
+Luego, capturás la ID:
+
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("editar-btn")) {
+    const id = e.target.dataset.id;
+    cargarTareaParaEditar(id);
+  }
+});
+
+
+Y pedís la tarea al backend:
+
+async function cargarTareaParaEditar(id) {
+  const res = await apiRequest(`/task/${id}`, "GET", null, true);
+  const task = await res;
+
+  // completar formulario
+  document.querySelector("#titulo").value = task.titulo;
+  document.querySelector("#descripcion").value = task.descripcion;
+  document.querySelector("#fechaLimite").value = task.fechaLimite;
+  document.querySelector("#taskId").value = task.id;
+}
